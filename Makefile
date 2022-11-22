@@ -1,7 +1,7 @@
 PPC = powerpc-eabi
 
 inject : injector code.bin
-        cat code.bin | ./injector $(GCI) 10000
+        ./injector $(GCI)
 
 code.bin : code.s 
         $(PPC)-as -s code.s -o code.o
