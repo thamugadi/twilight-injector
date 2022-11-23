@@ -1,8 +1,8 @@
-.macro .mov reg addr
+.macro .mov reg imm
 li \reg, 0
-ori \reg, \reg, (\addr >> 16) & 0x0000ffff
-slwi 0, 0, 16
-ori \reg, \reg, \addr & 0x0000ffff
+ori \reg, \reg, (\imm >> 16) & 0x0000ffff
+slwi \reg, \reg, 16
+ori \reg, \reg, \imm & 0x0000ffff
 .endm
 
 # Place your code here.
