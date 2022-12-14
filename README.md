@@ -1,5 +1,5 @@
 # twilight-injector
-ret2shellcode in Zelda: Twilight Princess (Gamecube) savefile.
+ret2code in Zelda: Twilight Princess (Gamecube) savefile.
 
 Usage:
 ```
